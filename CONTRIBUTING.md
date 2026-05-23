@@ -39,6 +39,8 @@ Each plugin entry should follow this schema:
 }
 ```
 
+> **Personal note:** I've found it helpful to test your JSON locally with `python3 -m json.tool marketplace.json` before opening a PR — saves a round trip on basic syntax errors.
+
 ## Code Owners
 
 See [CODEOWNERS](.github/CODEOWNERS) for the list of maintainers responsible for each area of the project.
