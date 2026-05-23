@@ -1,63 +1,66 @@
-# Contributing Guidelines
+# Contributing to Agent Plugins
 
-Thank you for your interest in contributing to Agent Plugins for AWS.
+Thank you for your interest in contributing! This document outlines the process for contributing to this fork of [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins).
 
-## Role Guides
+## Getting Started
 
-Depending on your role, please review the appropriate guide for repository-specific instructions:
+1. Fork the repository
+2. Clone your fork locally
+3. Create a new branch for your changes
 
-- [Development Guide](./docs/DEVELOPMENT_GUIDE.md) - For contributors and developers
-- [Maintainers Guide](./docs/MAINTAINERS_GUIDE.md) - For reviewers, maintainers, and admins
-- [Administrators Guide](./docs/ADMINISTRATORS_GUIDE.md) - For GitHub repository and AWS account setup
+```bash
+git clone https://github.com/your-username/agent-plugins.git
+cd agent-plugins
+git checkout -b feat/your-feature-name
+```
 
-**Using Claude Code?** See the [Claude Code Setup](./docs/DEVELOPMENT_GUIDE.md#claude-code-setup) section in the Development Guide for project-specific configuration.
+## Plugin Structure
 
-## RFCs for New Plugins and Major Changes
+Plugins are registered in one of two marketplace files depending on their target agent:
 
-For **new plugins** or **major changes** to the repository, contributors must first open an [RFC (Request for Comments)](https://github.com/awslabs/agent-plugins/issues) before doing any work. This ensures public visibility and allows maintainers and owners to review the proposal. Once the RFC is approved, you can proceed with your contribution following the steps in [Contributing via Pull Requests](#contributing-via-pull-requests).
+- `.agents/plugins/marketplace.json` — for general agent plugins
+- `.claude-plugin/marketplace.json` — for Claude-specific plugins
 
-## Reporting Bugs/Feature Requests
+### Adding a New Plugin
 
-We welcome you to use the GitHub issue tracker to report bugs or suggest features.
+Each plugin entry should follow this schema:
 
-When filing an issue, please check existing open, or recently closed, issues to make sure somebody else hasn't already reported the issue. Please try to include as much information as you can. Details like these are incredibly useful:
+```json
+{
+  "id": "unique-plugin-id",
+  "name": "Human Readable Name",
+  "description": "What this plugin does",
+  "version": "1.0.0",
+  "author": "your-github-username",
+  "tags": ["category", "use-case"],
+  "url": "https://github.com/your-org/your-plugin-repo"
+}
+```
 
-- A reproducible test case or series of steps
-- The version of our code being used
-- Any modifications you've made relevant to the bug
-- Anything unusual about your environment or deployment
+## Code Owners
 
-## Contributing via Pull Requests
+See [CODEOWNERS](.github/CODEOWNERS) for the list of maintainers responsible for each area of the project.
 
-Contributions via pull requests are much appreciated. Before sending us a pull request, please ensure that:
+## Submitting a Pull Request
 
-1. You are working against the latest source on the _main_ branch.
-2. You check existing open, and recently merged, pull requests to make sure someone else hasn't addressed the problem already.
-3. You open an issue to discuss any significant work - we would hate for your time to be wasted.
+1. Ensure your plugin entry is valid JSON and follows the schema above
+2. Add yourself to `CODEOWNERS` if you are maintaining the plugin
+3. Open a PR against the `main` branch with a clear description
+4. Fill out the appropriate issue template if applicable
 
-To send us a pull request, please:
+## Reporting Issues
 
-1. Fork the repository.
-2. Modify the source; please focus on the specific change you are contributing.
-3. Ensure local tests pass.
-4. Commit to your fork using clear commit messages.
-5. Send us a pull request, answering any default questions in the pull request interface.
-6. Pay attention to any automated CI failures reported in the pull request, and stay involved in the conversation.
+Use one of the issue templates in [`.github/ISSUE_TEMPLATE`](.github/ISSUE_TEMPLATE):
 
-GitHub provides additional documentation on [forking a repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) and [creating a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
-
-## Finding Contributions to Work On
-
-Looking at the existing issues is a great way to find something to contribute on. As our projects, by default, use the default GitHub issue labels (enhancement/bug/duplicate/help wanted/invalid/question/wontfix), looking at any 'help wanted' issues is a great place to start.
+- **Bug Report** — something is broken
+- **Feature Request** — you want something new
+- **Documentation** — docs need improvement
+- **RFC** — proposing a significant change
 
 ## Code of Conduct
 
-This project has adopted the [Amazon Open Source Code of Conduct](https://aws.github.io/code-of-conduct). For more information see the [Code of Conduct FAQ](https://aws.github.io/code-of-conduct-faq) or contact opensource-codeofconduct@amazon.com with any additional questions or comments.
+This project follows the [Amazon Open Source Code of Conduct](https://aws.github.io/code-of-conduct). Please be respectful and constructive in all interactions.
 
-## Security Issue Notifications
+## License
 
-If you discover a potential security issue in this project we ask that you notify AWS/Amazon Security via our [vulnerability reporting page](https://aws.amazon.com/security/vulnerability-reporting/). Please do **not** create a public GitHub issue.
-
-## Licensing
-
-See the [LICENSE](LICENSE) file for our project's licensing. We will ask you to confirm the licensing of your contribution.
+By contributing, you agree that your contributions will be licensed under the same license as this project.
