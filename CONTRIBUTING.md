@@ -2,6 +2,8 @@
 
 Thank you for your interest in contributing! This document outlines the process for contributing to this fork of [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins).
 
+> **Note:** This is my personal fork for learning and experimentation. For the official project, please visit [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins).
+
 ## Getting Started
 
 1. Fork the repository
