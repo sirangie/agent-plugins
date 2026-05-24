@@ -75,6 +75,8 @@ See [CODEOWNERS](.github/CODEOWNERS) for who reviews what.
 ## Personal notes
 
 > This is my personal fork for experimenting with custom plugins. I'm not actively syncing upstream changes — check the [original repo](https://github.com/awslabs/agent-plugins) for the latest official updates.
+>
+> **Sync status:** Last checked against upstream: 2025-06-10. A few commits behind but nothing that affects my use case — the schema changes in upstream don't apply to the plugins I'm working with.
 
 ## License
 
