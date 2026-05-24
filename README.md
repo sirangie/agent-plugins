@@ -69,6 +69,10 @@ For larger changes, open an [RFC](.github/ISSUE_TEMPLATE/rfc.yml) first.
 
 See [CODEOWNERS](.github/CODEOWNERS) for who reviews what.
 
+## Personal notes
+
+> This is my personal fork for experimenting with custom plugins. I'm not actively syncing upstream changes — check the [original repo](https://github.com/awslabs/agent-plugins) for the latest official updates.
+
 ## License
 
 Apache 2.0 — same as the upstream project.
