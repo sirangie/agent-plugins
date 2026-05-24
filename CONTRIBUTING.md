@@ -50,6 +50,8 @@ Each plugin entry should follow this schema:
 > alias check-plugins='python3 -c "import json; data=json.load(open(\"marketplace.json\")); [print(p[\"id\"]) for p in data[\"plugins\"]]"\'`
 > ```
 
+> **Also worth noting:** plugin IDs should use kebab-case (e.g. `my-cool-plugin`, not `myCoolPlugin` or `my_cool_plugin`). The upstream project isn't super strict about this but keeping it consistent makes grepping through the marketplace files a lot easier.
+
 ## Code Owners
 
 See [CODEOWNERS](.github/CODEOWNERS) for the list of maintainers responsible for each area of the project.
@@ -75,5 +77,3 @@ Use one of the issue templates in [`.github/ISSUE_TEMPLATE`](.github/ISSUE_TEMPL
 This project follows the [Amazon Open Source Code of Conduct](https://aws.github.io/code-of-conduct). Please be respectful and constructive in all interactions.
 
 ## License
-
-By contributing, you agree that your contributions will be licensed under the same license as this project.
