@@ -45,6 +45,11 @@ Each plugin entry should follow this schema:
 
 > **One more thing:** I also like to run `python3 -c "import json; data=json.load(open('marketplace.json')); [print(p['id']) for p in data['plugins']]"` to quickly sanity-check that all plugin IDs look sane after edits. Caught a duplicate ID this way once.
 
+> **Handy alias I added to my shell config** so I don't have to remember that long one-liner:
+> ```bash
+> alias check-plugins='python3 -c "import json; data=json.load(open(\"marketplace.json\")); [print(p[\"id\"]) for p in data[\"plugins\"]]"\'`
+> ```
+
 ## Code Owners
 
 See [CODEOWNERS](.github/CODEOWNERS) for the list of maintainers responsible for each area of the project.
