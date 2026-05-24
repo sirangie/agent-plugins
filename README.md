@@ -43,9 +43,12 @@ Each plugin entry follows this structure:
   "author": "your-github-handle",
   "category": "productivity | devtools | data | communication | other",
   "entrypoint": "https://example.com/plugin-manifest.json",
-  "tags": ["tag1", "tag2"]
+  "tags": ["tag1", "tag2"],
+  "enabled": true
 }
 ```
+
+> **Note (personal):** I've been defaulting `enabled` to `false` in my local plugins while testing so they don't accidentally get picked up by the runtime. Flip it to `true` when the plugin is actually ready.
 
 ## Categories
 
