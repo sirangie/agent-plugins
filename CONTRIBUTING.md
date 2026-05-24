@@ -43,6 +43,8 @@ Each plugin entry should follow this schema:
 
 > **Another tip I keep forgetting:** run `python3 -m json.tool` on *both* marketplace files if your plugin touches shared utilities — I've broken the claude-specific one by only checking the general one.
 
+> **One more thing:** I also like to run `python3 -c "import json; data=json.load(open('marketplace.json')); [print(p['id']) for p in data['plugins']]"` to quickly sanity-check that all plugin IDs look sane after edits. Caught a duplicate ID this way once.
+
 ## Code Owners
 
 See [CODEOWNERS](.github/CODEOWNERS) for the list of maintainers responsible for each area of the project.
